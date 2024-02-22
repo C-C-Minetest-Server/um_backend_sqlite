@@ -24,7 +24,7 @@ um_backend_sqlite.internal = {}
 
 local ie = minetest.request_insecure_environment()
 if not ie then
-    error("[um_backend_sqlite] Please add um_backend_sqlite into secure.trusted mod.")
+    error("[um_backend_sqlite] Please add um_backend_sqlite into secure.trusted_mod.")
 end
 
 um_backend_sqlite.internal.sqlite3 = ie.require("lsqlite3")
