@@ -143,7 +143,7 @@ function _db.list_accounts()
 
     local r = {}
     for row in q:urows() do
-        r[#r+1] = row.name
+        r[#r+1] = row
     end
 
     return r
