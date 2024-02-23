@@ -49,7 +49,7 @@ function _c.write_cache(name)
     if cache[name] then
         local id = _db.get_primary_key(name)
         if id then
-            _db.set_balance(id, name, cache[name])
+            _db.set_balance(id, cache[name])
         else
             _db.create_account(name, cache[name])
         end

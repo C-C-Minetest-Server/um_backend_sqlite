@@ -91,14 +91,14 @@ function _db.get_primary_key(name)
     end
 end
 
-function _db.set_balance(id, name, value)
+function _db.set_balance(id, value)
     local q = assert(_int.db_prepare([[
-        REPLACE INTO `um_balance`
-        (`id`, `name`, `balance`) VALUES (?, ?, ?);
+        UPDATE `um_balance`
+        SET `balance` = ?
+        WHERE `id` = ?;
     ]]))
-    q:bind(1, id)
-    q:bind(2, name)
-    q:bind(3, value)
+    q:bind(1, value)
+    q:bind(2, id)
 
     return _int.stmt_exec(q)
 end

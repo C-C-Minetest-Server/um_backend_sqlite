@@ -34,6 +34,7 @@ unified_money.register_backend({
         return true
     end,
     create_account = function(name, default_val)
+        _db.create_account(name, default_val or 0)
         _c.set_balance(name, default_val or 0)
         return true
     end,
